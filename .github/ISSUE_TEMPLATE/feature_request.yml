@@ -1,0 +1,38 @@
+name: Feature request
+description: Suggest an improvement or a new capability.
+title: '[Feature]: '
+labels: ['enhancement']
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      placeholder: When I review appointments, I cannot...
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the behaviour you would like. Mockups are welcome.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Area
+      options:
+        - Dashboard
+        - Patients
+        - Appointments
+        - Login / session
+        - Accessibility
+        - Tooling / CI
+        - Documentation
+        - Other
+    validations:
+      required: true
