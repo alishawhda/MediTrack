@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#12313a" />
+    <meta
+      name="description"
+      content="Sign in to MediTrack, a clinic patient and appointment management system."
+    />
+    <meta name="author" content="alishawhda" />
+    <title>Sign in · MediTrack</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body data-page="login">
+    <main class="login-wrap">
+      <section class="login-card" aria-labelledby="loginTitle">
+        <h1 id="loginTitle" class="brand text-center mb-1">
+          <i class="bi bi-heart-pulse-fill text-warning" aria-hidden="true"></i> Medi<span
+            >Track</span
+          >
+        </h1>
+        <p class="text-center text-muted mb-4">Sign in to manage patients and appointments.</p>
+
+        <div id="loginError" class="alert alert-danger d-none" role="alert"></div>
+
+        <form id="loginForm" novalidate>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              autocomplete="username"
+              required
+              autofocus
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <div class="password-group">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                autocomplete="current-password"
+                required
+              />
+              <button
+                type="button"
+                id="togglePassword"
+                class="password-toggle"
+                aria-label="Show password"
+                aria-pressed="false"
+              >
+                <i class="bi bi-eye" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-teal w-100">Sign in</button>
+        </form>
+
+        <p class="demo-note text-center mt-4 mb-0">
+          <strong>Demo mode.</strong> Sign in with <code>admin</code> / <code>meditrack123</code>.
+          No real patient data is stored on a server.
+        </p>
+      </section>
+    </main>
+
+    <noscript>
+      <p class="text-center text-white p-3">
+        MediTrack needs JavaScript enabled to run. This is a front-end demo — no data leaves your
+        browser.
+      </p>
+    </noscript>
+
+    <script type="module" src="/src/js/pages/login.js"></script>
+  </body>
+</html>

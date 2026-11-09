@@ -1,0 +1,372 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+/* MediTrack — design tokens and shared styles.
+   Palette: ink #12313A, teal #0E6E73, mint #E4F1EE, paper #F6F8F7, signal #F2A33A */
+:root {
+  --ink: #12313a;
+  --ink-soft: #2d4a52;
+  --teal: #0e6e73;
+  --teal-dark: #0a5559;
+  --mint: #e4f1ee;
+  --paper: #f6f8f7;
+  --signal: #f2a33a;
+  --danger: #b33227;
+  --line: #d9e3e0;
+  --radius: 12px;
+  --shadow: 0 1px 2px rgba(18, 49, 58, 0.06), 0 8px 24px rgba(18, 49, 58, 0.06);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    'DM Sans',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+.brand {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--teal-dark);
+}
+
+a:hover {
+  color: var(--teal);
+}
+
+:focus-visible {
+  outline: 3px solid var(--signal);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 2000;
+  background: var(--signal);
+  color: var(--ink);
+  font-weight: 700;
+  padding: 0.6rem 1rem;
+  border-radius: 0 0 8px 8px;
+  transition: top 0.15s ease-in-out;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Navigation */
+.navbar-mt {
+  background: var(--ink);
+  box-shadow: 0 2px 12px rgba(18, 49, 58, 0.18);
+}
+
+.navbar-mt .navbar-brand {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.navbar-mt .navbar-brand span {
+  color: var(--signal);
+}
+
+.navbar-mt .nav-link {
+  color: #cfe3e0;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.35rem;
+}
+
+.navbar-mt .nav-link:hover,
+.navbar-mt .nav-link:focus {
+  color: #fff;
+}
+
+.navbar-mt .nav-link.active {
+  color: #fff;
+  border-bottom-color: var(--signal);
+}
+
+.navbar-user {
+  color: #cfe3e0;
+  white-space: nowrap;
+}
+
+/* Page furniture */
+.page-head {
+  border-left: 5px solid var(--signal);
+  padding-left: 1rem;
+  margin: 1.75rem 0 1.25rem;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.stat {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  height: 100%;
+  box-shadow: var(--shadow);
+}
+
+.stat .num {
+  font-family: 'Fraunces', serif;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--teal);
+}
+
+.stat.alert-stat .num {
+  color: var(--danger);
+}
+
+/* Tables */
+.table {
+  --bs-table-hover-bg: #f1f8f6;
+  margin-bottom: 0;
+}
+
+.table thead th {
+  background: var(--mint);
+  color: var(--ink);
+  font-weight: 600;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--line);
+}
+
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
+
+.empty-state {
+  text-align: center;
+  color: #5a7379;
+  padding: 2.5rem 1rem !important;
+}
+
+/* Status pills */
+.badge-status {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.38rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.status-active,
+.status-scheduled {
+  background: #dff1ec;
+  color: #0a5754;
+}
+
+.status-critical {
+  background: #fbe4e1;
+  color: #96291f;
+}
+
+.status-discharged {
+  background: #eceff0;
+  color: #3f5257;
+}
+
+.status-completed {
+  background: #e3ecf7;
+  color: #2c4a6e;
+}
+
+.status-cancelled {
+  background: #f7ead8;
+  color: #7d4a10;
+}
+
+/* Buttons */
+.btn-teal {
+  background: var(--teal);
+  color: #fff;
+  border: 0;
+}
+
+.btn-teal:hover,
+.btn-teal:focus {
+  background: var(--teal-dark);
+  color: #fff;
+}
+
+.btn-outline-secondary {
+  color: var(--ink-soft);
+  border-color: #b9c9c5;
+}
+
+/* Charts */
+.chart-box {
+  position: relative;
+  height: 280px;
+}
+
+/* Feedback */
+.toast-mt {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1080;
+  max-width: min(360px, calc(100vw - 2rem));
+  background: var(--ink);
+  color: #fff;
+  border-left: 4px solid var(--signal);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  box-shadow: 0 12px 30px rgba(18, 49, 58, 0.28);
+}
+
+.toast-mt[data-tone='warning'] {
+  border-left-color: var(--danger);
+}
+
+/* Footer */
+.footer-mt {
+  background: var(--ink);
+  color: #cfe3e0;
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.footer-mt a {
+  color: var(--signal);
+  text-decoration: none;
+}
+
+.footer-mt a:hover {
+  text-decoration: underline;
+}
+
+/* Login */
+.login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(242, 163, 58, 0.18), transparent 45%),
+    linear-gradient(135deg, var(--ink) 0%, var(--teal) 100%);
+  padding: 1rem;
+}
+
+.login-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 410px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.login-card .brand {
+  font-size: 2rem;
+  color: var(--ink);
+}
+
+.login-card .brand span {
+  color: var(--teal);
+}
+
+.demo-note {
+  background: var(--mint);
+  border: 1px dashed #9cc4bc;
+  border-radius: 8px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  padding: 0.65rem 0.85rem;
+}
+
+.password-group {
+  position: relative;
+}
+
+.password-group .form-control {
+  padding-right: 3rem;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 0.4rem;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  padding: 0.4rem 0.55rem;
+  border-radius: 6px;
+}
+
+/* Forms */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 0.2rem rgba(14, 110, 115, 0.18);
+}
+
+@media (max-width: 576px) {
+  .stat .num {
+    font-size: 1.8rem;
+  }
+  .chart-box {
+    height: 240px;
+  }
+  .page-head {
+    margin-top: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  .navbar-mt,
+  .footer-mt,
+  .toast-mt,
+  .btn {
+    display: none !important;
+  }
+  .panel,
+  .stat {
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MediTrack">
+  <rect width="64" height="64" rx="14" fill="#12313A"/>
+  <path d="M10 34h10l5-11 7 20 5-12 4 3h13" fill="none" stroke="#F2A33A" stroke-width="4"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
