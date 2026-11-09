@@ -1,0 +1,48 @@
+name: Bug report
+description: Something is broken or behaves unexpectedly.
+title: '[Bug]: '
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. For security issues, please use the private
+        security advisory link instead of a public issue.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Include the page and what you expected instead.
+      placeholder: On the Patients page, clicking Save with an empty name...
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Sign in with admin / meditrack123
+        2. Open Patients
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      placeholder: Chrome 141 on Windows 11
+  - type: textarea
+    id: console
+    attributes:
+      label: Console output
+      description: Paste any errors from the browser console, if present.
+      render: shell
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched existing issues first.
+          required: true
+        - label: This is not a security report.
+          required: true

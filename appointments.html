@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#12313a" />
+    <meta
+      name="description"
+      content="View scheduled, completed and cancelled appointments in MediTrack."
+    />
+    <meta name="author" content="alishawhda" />
+    <title>Appointments · MediTrack</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body data-page="appointments">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="navbar"></div>
+
+    <main id="main" class="container">
+      <header class="page-head">
+        <h1 class="h2 mb-0">Appointments</h1>
+        <p class="text-muted mb-0">Track bookings across departments.</p>
+      </header>
+
+      <section class="row g-3">
+        <div class="col-12 col-lg-7">
+          <div class="panel">
+            <div class="mb-3">
+              <label class="visually-hidden" for="apptFilter">Filter appointments by status</label>
+              <select id="apptFilter" class="form-select">
+                <option value="All">All statuses</option>
+                <option>Scheduled</option>
+                <option>Completed</option>
+                <option>Cancelled</option>
+              </select>
+            </div>
+            <p id="apptSummary" class="small text-muted" aria-live="polite"></p>
+
+            <div class="table-responsive">
+              <table class="table table-hover align-middle mb-0">
+                <caption class="visually-hidden">
+                  Appointments with patient, doctor, department, date and status.
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Patient</th>
+                    <th scope="col">Doctor</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody id="apptBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-5">
+          <div class="panel">
+            <h2 class="h5">Appointments by department</h2>
+            <div class="chart-box">
+              <canvas id="deptChart">Appointments by department chart</canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+    <div id="toast" class="toast-mt d-none" role="status" aria-live="polite"></div>
+
+    <script type="module" src="/src/js/pages/appointments.js"></script>
+  </body>
+</html>

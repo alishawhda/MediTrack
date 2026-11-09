@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#12313a" />
+    <meta name="description" content="Today's patient and appointment overview in MediTrack." />
+    <meta name="author" content="alishawhda" />
+    <title>Dashboard · MediTrack</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body data-page="dashboard">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="navbar"></div>
+
+    <main id="main" class="container">
+      <header class="page-head">
+        <h1 class="h2 mb-0">Dashboard</h1>
+        <p class="text-muted mb-0">Today's overview of patients and appointments.</p>
+      </header>
+
+      <section class="row g-3 mb-3" aria-label="Summary">
+        <div class="col-6 col-lg-3">
+          <div class="stat">
+            <div class="num" id="statTotal">0</div>
+            <div class="text-muted">Total patients</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat">
+            <div class="num" id="statActive">0</div>
+            <div class="text-muted">Active patients</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat alert-stat">
+            <div class="num" id="statCritical">0</div>
+            <div class="text-muted">Critical cases</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat">
+            <div class="num" id="statUpcoming">0</div>
+            <div class="text-muted">Upcoming appointments</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="row g-3 mb-3" aria-label="Charts">
+        <div class="col-12 col-lg-6">
+          <div class="panel">
+            <h2 class="h5">Patients by condition</h2>
+            <div class="chart-box">
+              <canvas id="condChart">Patients by condition chart</canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="panel">
+            <h2 class="h5">Patients by status</h2>
+            <div class="chart-box">
+              <canvas id="statusChart">Patients by status chart</canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="upcomingTitle">
+        <h2 class="h5" id="upcomingTitle">Next appointments</h2>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <caption class="visually-hidden">
+              The five soonest scheduled appointments.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Patient</th>
+                <th scope="col">Doctor</th>
+                <th scope="col">Date and time</th>
+                <th scope="col">Department</th>
+              </tr>
+            </thead>
+            <tbody id="upcomingBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+    <div id="toast" class="toast-mt d-none" role="status" aria-live="polite"></div>
+
+    <script type="module" src="/src/js/pages/dashboard.js"></script>
+  </body>
+</html>
