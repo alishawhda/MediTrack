@@ -7,6 +7,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.1.0-teal)](CHANGELOG.md)
 
+**Live demo:** <https://alishawhda.github.io/MediTrack/>
+
 ![MediTrack dashboard](docs/screenshots/dashboard.png)
 
 ## Why it exists
